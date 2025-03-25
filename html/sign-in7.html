@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check your Inbox.</title>
+    <title>Email ERROR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             font-family: "Albert Sans", sans-serif;
@@ -77,40 +76,18 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="custom-box text-center">
         <div class="text-container">
-            <h4>Check your Inbox.</h4>
-            <p class="mt-4">
-                Click the link we sent to myemail@gmail.com to sign in.
-                <span class="d-block  my-3">or</span>
-                Enter the 6-digit code you found in the Email here.
-            </p>
+            <h4>Sorry, we didn’t recognize that mail</h4>
+            <p class="mt-4">Please check if the email was correct.</p>
         </div>
         <div class="input-container mt-5">
-            <input type="email" id="email" class="form-control" placeholder="Your email" required>
+            <input type="email" id="email" class="form-control" placeholder="Your email">
         </div>
-        <button class="btn btn-continue mt-5" onclick="checkEmail()">Continue</button>
+        <a href="">
+            <button class="btn btn-continue mt-5">Continue</button>
+        </a>
         <a href="sign-in2.html" class="other-signin-option mt-5 text-decoration-none">&lt;&nbsp; Other Sign In Option</a>
     </div>
 </div>
-
-<script>
-    function checkEmail() {
-        let emailInput = document.getElementById('email').value;
-        let lastEmail = localStorage.getItem('lastEmail');
-        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(emailInput)) {
-            // if wrong Email
-            window.location.href = "sign-in7.html";
-            return;
-        }
-
-        if (lastEmail && emailInput !== lastEmail) {
-            alert("Anomaly detected: You are using a different email than last time!");
-        }
-
-        localStorage.setItem('lastEmail', emailInput);
-    }
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
